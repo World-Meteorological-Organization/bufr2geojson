@@ -1180,7 +1180,7 @@ class BUFRParser:
                 last_key = key
                 index += 1
             else:
-                last_key=key
+                last_key = key
         codes_bufr_keys_iterator_delete(key_iterator)
 
 
