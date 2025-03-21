@@ -11,11 +11,11 @@ More information on the BUFR format can be found in the [WMO Manual on Codes, Vo
 
 ### Dependencies
 
-Dependencies are listed in [requirements.txt](https://github.com/wmo-im/bufr2geojson/blob/main/requirements.txt). Dependencies are automatically installed during bufr2geojson installation.
+Dependencies are listed in [requirements.txt](https://github.com/World-Meteorological-Organization/bufr2geojson/blob/main/requirements.txt). Dependencies are automatically installed during bufr2geojson installation.
 
 ```bash
 # download and build Docker image
-git clone https://github.com/wmo-im/bufr2geojson.git
+git clone https://github.com/World-Meteorological-Organization/bufr2geojson.git
 cd bufr2geojson
 docker build -t bufr2geojson .
 
@@ -51,7 +51,7 @@ rm -fr build dist *.egg-info
 python setup.py sdist bdist_wheel --universal
 twine upload dist/*
 
-# publish release on GitHub (https://github.com/wmo-im/bufr2geojson/releases/new)
+# publish release on GitHub (https://github.com/World-Meteorological-Organization/bufr2geojson/releases/new)
 
 # bump version back to dev
 vi bufr2geojson/__init__.py  # update __version__
@@ -59,17 +59,13 @@ git commit -am 'back to dev'
 git push origin main
 ```
 
-## Documentation
-
-The full documentation for bufr2geojson can be found at [https://bufr2geojson.readthedocs.io](https://bufr2geojson.readthedocs.io), including sample files.
-
 ### Code Conventions
 
 * [PEP8](https://www.python.org/dev/peps/pep-0008)
 
 ### Bugs and Issues
 
-All bugs, enhancements and issues are managed on [GitHub](https://github.com/wmo-im/bufr2geojson/issues).
+All bugs, enhancements and issues are managed on [GitHub](https://github.com/World-Meteorological-Organization/bufr2geojson/issues).
 
 ## Contact
 
