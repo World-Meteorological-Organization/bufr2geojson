@@ -485,10 +485,11 @@ class BUFRParser:
         if len(rel_height) == 1 and station_ground is not None:
             assert station_ground.get('attributes').get('units') == self.qualifiers["07"].get(rel_height[0]).get('attributes').get('units')  # noqa
             try:
+                temp = self.qualifiers["07"].get(rel_height[0], {})
                 z_amsl = station_ground.get('value') + self.qualifiers["07"].get(rel_height[0], {}).get('value')  # noqa
-                z_alg = self.qualifiers["07"].get(rel_height[0], {}).get('value')
-            except TypeError as err:
-                name = str(self.qualifiers["07"].get(rel_height[0]).get("code"))
+                z_alg = temp.get('value')
+            except TypeError:
+                name = str(temp.get("code"))
                 msg = f"Missing value between {name} descriptors."
                 LOGGER.error(msg)
                 raise RuntimeError(msg)
