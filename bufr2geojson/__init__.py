@@ -488,7 +488,7 @@ class BUFRParser:
                 temp = self.qualifiers["07"]
                 z_amsl = station_ground.get('value') + temp.get(rel_height[0], {}).get('value')  # noqa
                 z_alg = temp.get(rel_height[0], {}).get('value')
-            except TypeError as error:
+            except Exception as error:
                 msg = f"Error raised while extracting z coordinate: {error}"
                 LOGGER.error(msg)
                 raise RuntimeError(msg)
