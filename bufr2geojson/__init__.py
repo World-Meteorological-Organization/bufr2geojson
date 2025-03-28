@@ -485,12 +485,11 @@ class BUFRParser:
         if len(rel_height) == 1 and station_ground is not None:
             assert station_ground.get('attributes').get('units') == self.qualifiers["07"].get(rel_height[0]).get('attributes').get('units')  # noqa
             try:
-                temp = self.qualifiers["07"].get(rel_height[0], {})
-                z_amsl = station_ground.get('value') + self.qualifiers["07"].get(rel_height[0], {}).get('value')  # noqa
-                z_alg = temp.get('value')
-            except TypeError:
-                name = str(temp.get("code"))
-                msg = f"Missing value between {name} descriptors."
+                temp = self.qualifiers["07"]
+                z_amsl = station_ground.get('value') + temp.get(rel_height[0], {}).get('value')  # noqa
+                z_alg = temp.get(rel_height[0], {}).get('value')
+            except TypeError as error:
+                msg = f"Error raised while extracting z coordinate: {error}"
                 LOGGER.error(msg)
                 raise RuntimeError(msg)
             if 'depth' in rel_height[0]:
