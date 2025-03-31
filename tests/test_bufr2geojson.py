@@ -27,7 +27,7 @@ import json
 from jsonschema import validate, FormatChecker
 import pytest
 
-from bufr2geojson import RESOURCES, strip2, transform
+from bufr2geojson import RESOURCES, strip2, transform, __version__
 
 WSI_FORMATCHECKER = FormatChecker()
 
@@ -140,7 +140,7 @@ def geojson_output():
                     "activity": {
                         "_:bufr2geojson": {
                             "prov:type": "prov:Activity",
-                            "prov:label": "Data transformation using version 0.7.0 of bufr2geojson",  # noqa
+                            "prov:label": f"Data transformation using version {__version__} of bufr2geojson",  # noqa
                             "prov:endTime": "2024-12-19 00:00:00"
                         }
                     }
